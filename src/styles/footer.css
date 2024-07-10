@@ -1,0 +1,7 @@
+.footer-head{
+    @apply mb-6 text-sm font-bold text-gray-900 
+}
+
+.footer-list{
+    @apply text-gray-500  font-normal
+}
