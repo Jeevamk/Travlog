@@ -1,12 +1,11 @@
+
 import React from "react";
 import "../../styles/footer.css";
 import { FaFacebook } from 'react-icons/fa'; 
 import { AiFillTwitterCircle } from "react-icons/ai";
 import { TiSocialInstagram } from "react-icons/ti";
-
-
-
 import { Link } from "react-router-dom";
+import Accordion from './Accordion'
 
 export default function Footer() {
   return (
@@ -19,8 +18,8 @@ export default function Footer() {
               <span className="logo-name">Travlog</span>
             </Link>
             <p className="mt-2 text-gray-400 font-medium">
-              Contrary to popular belief, Lorem Ipsum is not simply <br></br>{" "}
-              random text. It has roots in a piece of classical Latin<br></br>{" "}
+              Contrary to popular belief, Lorem Ipsum is not simply <br />
+              random text. It has roots in a piece of classical Latin<br />
               literature from 45 BC.
             </p>
             <div className="flex mt-2">
@@ -31,13 +30,12 @@ export default function Footer() {
                 <AiFillTwitterCircle size={26} color="#5D50C6" />
               </a>
               <a href="#" className="mr-4 rounded-full bg-indigo-600 text-white">
-                <TiSocialInstagram size={22} color="#fffff" />
+                <TiSocialInstagram size={22} color="#ffffff" />
               </a>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-            <div>
-              <h2 className="footer-head">Company</h2>
+          <div className="md:hidden">
+            <Accordion title="Company">
               <ul className="footer-list">
                 <li className="mb-4">
                   <Link to="/">About</Link>
@@ -47,24 +45,56 @@ export default function Footer() {
                 </li>
                 <li>Mobile</li>
               </ul>
-            </div>
-            <div>
-              <h2 className="footer-head">Contact</h2>
+            </Accordion>
+            <Accordion title="Contact">
               <ul className="footer-list">
                 <li className="mb-4">Why Travlog?</li>
                 <li className="mb-4">Partner with us</li>
                 <li className="mb-4">FAQ’ss</li>
                 <li>Blog</li>
               </ul>
-            </div>
-            <div>
-              <h2 className="footer-head">Meet Us</h2>
+            </Accordion>
+            <Accordion title="Meet Us">
               <ul className="footer-list">
                 <li className="mb-4">+00 92 1234 56789</li>
                 <li className="mb-4">info@travlog.com</li>
                 <li className="mb-4">205. R Street, New York</li>
                 <li>BD23200</li>
               </ul>
+            </Accordion>
+          </div>
+          <div className="hidden md:block"> 
+            <div className="grid gap-8 sm:gap-6 sm:grid-cols-3">
+              <div>
+                <h2 className="footer-head">Company</h2>
+                <ul className="footer-list">
+                  <li className="mb-4">
+                    <Link to="/">About</Link>
+                  </li>
+                  <li className="mb-4">
+                    <Link to="/">Career</Link>
+                  </li>
+                  <li>Mobile</li>
+                </ul>
+              </div>
+              <div>
+                <h2 className="footer-head">Contact</h2>
+                <ul className="footer-list">
+                  <li className="mb-4">Why Travlog?</li>
+                  <li className="mb-4">Partner with us</li>
+                  <li className="mb-4">FAQ’ss</li>
+                  <li>Blog</li>
+                </ul>
+              </div>
+              <div>
+                <h2 className="footer-head">Meet Us</h2>
+                <ul className="footer-list">
+                  <li className="mb-4">+00 92 1234 56789</li>
+                  <li className="mb-4">info@travlog.com</li>
+                  <li className="mb-4">205. R Street, New York</li>
+                  <li>BD23200</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -72,3 +102,5 @@ export default function Footer() {
     </footer>
   );
 }
+
+
