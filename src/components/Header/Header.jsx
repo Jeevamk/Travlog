@@ -44,7 +44,7 @@ export default function Header() {
             className={`lg:flex w-full lg:w-auto lg:order-1 ${
               mobileMenuOpen ? "block" : "hidden"
             }`}
-            id="mobile-menu-2"
+            
           >
             <ul className="nav-links-container">
               <li>
