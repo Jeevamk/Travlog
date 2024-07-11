@@ -31,18 +31,18 @@ const DestinationSlider = () => {
   const handleRightClick = () => {
     const firstItem = products.shift();
     products.push(firstItem);
-    setCurrentProducts(products.slice(0, 3));
+    setCurrentProducts([...products.slice(0, 3)]);
   };
 
   const handleLeftClick = () => {
     const lastItem = products.pop();
     products.unshift(lastItem);
-    setCurrentProducts(products.slice(0, 3));
+    setCurrentProducts([...products.slice(0, 3)]);
   };
 
   return (
     <div className="container mx-auto px-4 py-8 flex flex-col items-center mt-10">
-      <div className="flex justify-between items-center mb-8 w-full max-w-7xl">
+      <div className="flex justify-between items-center mb-8 w-full max-w-6xl">
         <div>
           <h3 className="text-pink-600 text-lg md:text-xl lg:text-2xl ">TOP DESTINATION</h3>
           <h2 className="text-black text-2xl md:text-4xl lg:text-3xl font-bold">Explore top destination</h2>
@@ -50,23 +50,23 @@ const DestinationSlider = () => {
         <div className="flex space-x-4">
           <button
             onClick={handleLeftClick}
-            className="w-[8vw] h-[8vw] md:w-[50px] md:h-[50px] border border-[#5D50C6] bg-white text-[#5D50C6] rounded-full flex items-center justify-center hover:bg-gray-200"
+            className="w-12 h-12 md:w-16 md:h-16 border border-[#5D50C6] bg-white text-[#5D50C6] rounded-full flex items-center justify-center hover:bg-gray-200"
           >
             <FaArrowLeft size={20} />
           </button>
           <button
             onClick={handleRightClick}
-            className="w-[8vw] h-[8vw] md:w-[50px] md:h-[50px] border border-[#5D50C6] bg-[#5D50C6] text-white rounded-full flex items-center justify-center hover:bg-[#4b3db3]"
+            className="w-12 h-12 md:w-16 md:h-16 border border-[#5D50C6] bg-[#5D50C6] text-white rounded-full flex items-center justify-center hover:bg-[#4b3db3]"
           >
             <FaArrowRight size={20} />
           </button>
         </div>
       </div>
-      <div className="flex flex-col space-y-8 md:flex-row md:space-y-0 md:space-x-8 transition-transform duration-300">
+      <div className="flex flex-col space-y-8 md:flex-row md:space-y-0 md:space-x-8">
         {currentProducts.map((product, index) => (
           <div
             key={index}
-            className="w-full md:w-[373.33px] h-auto md:h-[575px] p-4 border rounded-lg shadow-md flex flex-col"
+            className="w-full md:w-[350px] h-auto md:h-[500px] p-4 border rounded-lg shadow-md flex flex-col"
           >
             <img
               src={product.image}
