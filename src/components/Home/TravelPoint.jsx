@@ -64,7 +64,7 @@ const TravelPoint = () => {
             <h4 className="uppercase text-pink-600 text-lg font-bold">Travel Point</h4>
             <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-800 mt-4">We helping you find<br /> your dream location</h1>
             <p className="text-gray-500 mt-4 text-lg">
-              Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.
+              Contrary to popular belief, Lorem Ipsum is not <br></br> simply random text. It has roots in a piece of <br></br> classical Latin literature from 45 BC.
             </p>
             <div className="mt-12 space-y-8">
               <div className="flex items-center space-x-4">
