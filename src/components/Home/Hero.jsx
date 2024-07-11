@@ -1,5 +1,5 @@
 import React from "react";
-import backgroundImage from "../../assets/backgroundimage.jpg";
+import backgroundImage from "../../assets/backgroundimage.png";
 import { FaPlay, FaShoppingBag } from "react-icons/fa";
 
 const Hero = () => {
