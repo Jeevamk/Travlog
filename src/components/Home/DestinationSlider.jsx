@@ -1,131 +1,88 @@
+import React, { useState } from "react";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
-// import React, { useState } from 'react';
-
-// const DestinationSlider = () => {
-//   // Data for each card (image and description)
-//   const cards = [
-//     { image: '/image1.svg', description: 'Description for image 1' },
-//     { image: '/image2.svg', description: 'Description for image 2' },
-//     { image: '/image3.svg', description: 'Description for image 3' },
-    
-//   ];
-
-//   const [currentSlide, setCurrentSlide] = useState(0);
-
-//   const cardsPerPage = 3;
-
-//   const numSlides = Math.ceil(cards.length / cardsPerPage);
-
-//   const prevSet = () => {
-//     setCurrentSlide(currentSlide === 0 ? numSlides - 1 : currentSlide - 1);
-//   };
-
-//   const nextSet = () => {
-//     setCurrentSlide(currentSlide === numSlides - 1 ? 0 : currentSlide + 1);
-//   };
-
-//   return (
-//     <div className="max-w-screen-lg mx-auto">
-//       <div className="relative">
-//         <div className="overflow-hidden rounded-lg">
-//           <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
-//             {cards.slice(currentSlide * cardsPerPage, currentSlide * cardsPerPage + cardsPerPage).map((card, index) => (
-//               <div key={index} className="w-1/4 p-4">
-//                 <img src={card.image} alt={`Slide ${index}`} className="w-full h-auto rounded-lg shadow-md" />
-//                 <div className="p-4 bg-white shadow-md">
-//                   <p className="text-gray-800">{card.description}</p>
-//                 </div>
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-
-//         {/* Previous button */}
-//         <button
-//           className="absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 bg-gray-800 text-white rounded-md"
-//           onClick={prevSet}
-//         >
-//           Previous
-//         </button>
-
-//         {/* Next button */}
-//         <button
-//           className="absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 bg-gray-800 text-white rounded-md"
-//           onClick={nextSet}
-//         >
-//           Next
-//         </button>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default DestinationSlider;
-
-
-import React, { useState, useEffect } from 'react';
+const products = [
+  {
+    image: "./image1.svg",
+    name: "Paradise Beach, Bantayan Island",
+    price: "$550.16",
+    rating: 4.8,
+    place: "Rome, Italy",
+  },
+  {
+    image: "./image2.svg",
+    name: "Ocean with full of Colors",
+    price: "$20.99",
+    rating: 4.5,
+    place: "Maldives",
+  },
+  {
+    image: "./image3.svg",
+    name: "Mountain View, Above the cloud",
+    price: "$150.99",
+    rating: 5.0,
+    place: "United Arab Emirates",
+  },
+];
 
 const DestinationSlider = () => {
-  // Mock data for card images
-  const cardSlide = [
-    '/image1.svg',
-    '/image2.svg',
-    '/image3.svg',
-    
-  ];
+  const [currentProducts, setCurrentProducts] = useState(products.slice(0, 3));
 
-  // State to manage images for the slider
-  const [images, setImages] = useState(cardSlide);
-
-  // Function to handle next slide
-  const handleNext = () => {
-    setImages((prevImages) => {
-      const next = [...prevImages];
-      next.unshift(next.pop());
-      return next;
-    });
+  const handleRightClick = () => {
+    const firstItem = products.shift();
+    products.push(firstItem);
+    setCurrentProducts(products.slice(0, 3));
   };
 
-  // Function to handle previous slide
-  const handlePrev = () => {
-    setImages((prevImages) => {
-      const prev = [...prevImages];
-      prev.push(prev.shift());
-      return prev;
-    });
+  const handleLeftClick = () => {
+    const lastItem = products.pop();
+    products.unshift(lastItem);
+    setCurrentProducts(products.slice(0, 3));
   };
-
- 
 
   return (
-    <div className="max-w-screen-lg mx-auto">
-      <div className="relative">
-        {/* Slider */}
-        <div className="overflow-hidden rounded-lg">
-          <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${0 * 100}%)` }}>
-            {images.map((img, index) => (
-              <div key={index} className="w-1/4 p-4">
-                <img src={img} alt={`Slide ${index}`} className="w-full h-auto rounded-lg shadow-md" />
-              </div>
-            ))}
-          </div>
+    <div className="container mx-auto px-4 py-8 flex flex-col items-center mt-10">
+      <div className="flex justify-between items-center mb-8 w-full max-w-7xl">
+        <div>
+          <h3 className="text-pink-600 text-lg md:text-xl lg:text-2xl tracking-widest">TOP DESTINATION</h3>
+          <h2 className="text-black text-2xl md:text-4xl lg:text-5xl font-bold">Explore top destination</h2>
         </div>
-
-        {/* Previous button */}
-        <button
-          className="absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 bg-gray-800 text-white rounded-md"
-          onClick={handlePrev}
-        >
-          Prev
-        </button>
-
-        {/* Next button */}
-        <button
-          className="absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 bg-gray-800 text-white rounded-md"
-          onClick={handleNext}
-        >
-          Next
-        </button>
+        <div className="flex space-x-4">
+          <button
+            onClick={handleLeftClick}
+            className="w-[8vw] h-[8vw] md:w-[70px] md:h-[70px] border border-[#5D50C6] bg-white text-[#5D50C6] rounded-full flex items-center justify-center hover:bg-gray-200"
+          >
+            <FaArrowLeft size={24} />
+          </button>
+          <button
+            onClick={handleRightClick}
+            className="w-[8vw] h-[8vw] md:w-[70px] md:h-[70px] border border-[#5D50C6] bg-[#5D50C6] text-white rounded-full flex items-center justify-center hover:bg-[#4b3db3]"
+          >
+            <FaArrowRight size={24} />
+          </button>
+        </div>
+      </div>
+      <div className="flex flex-col space-y-8 md:flex-row md:space-y-0 md:space-x-8 transition-transform duration-300">
+        {currentProducts.map((product, index) => (
+          <div
+            key={index}
+            className="w-full md:w-[373.33px] h-auto md:h-[575px] p-4 border rounded-lg shadow-md flex flex-col"
+          >
+            <img
+              src={product.image}
+              alt={product.name}
+              className="w-full h-2/3 object-cover rounded-t-lg"
+            />
+            <div className="p-4 flex flex-col justify-between flex-grow">
+              <div className="flex justify-between items-center">
+                <h3 className="text-lg md:text-xl lg:text-2xl font-semibold">{product.name}</h3>
+                <p className="text-pink-600 font-bold">{product.price}</p>
+              </div>
+              <p className="text-gray-600">{product.place}</p>
+              <div className="text-lg font-bold text-orange-500">{product.rating} ★</div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
