@@ -42,7 +42,7 @@ const Features = () => {
               </div>
             </div>
           </div>
-          <div className="w-full md:w-1/2 mt-6  flex justify-end ml-7 "> 
+          <div className="w-full md:w-1/2 mt-6  flex justify-end"> 
             
               <img src="./features.svg" alt="Feature" className="w-full h-auto rounded-lg " />
            
