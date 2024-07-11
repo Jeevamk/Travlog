@@ -44,21 +44,21 @@ const DestinationSlider = () => {
     <div className="container mx-auto px-4 py-8 flex flex-col items-center mt-10">
       <div className="flex justify-between items-center mb-8 w-full max-w-7xl">
         <div>
-          <h3 className="text-pink-600 text-lg md:text-xl lg:text-2xl tracking-widest">TOP DESTINATION</h3>
-          <h2 className="text-black text-2xl md:text-4xl lg:text-5xl font-bold">Explore top destination</h2>
+          <h3 className="text-pink-600 text-lg md:text-xl lg:text-2xl ">TOP DESTINATION</h3>
+          <h2 className="text-black text-2xl md:text-4xl lg:text-3xl font-bold">Explore top destination</h2>
         </div>
         <div className="flex space-x-4">
           <button
             onClick={handleLeftClick}
-            className="w-[8vw] h-[8vw] md:w-[70px] md:h-[70px] border border-[#5D50C6] bg-white text-[#5D50C6] rounded-full flex items-center justify-center hover:bg-gray-200"
+            className="w-[8vw] h-[8vw] md:w-[50px] md:h-[50px] border border-[#5D50C6] bg-white text-[#5D50C6] rounded-full flex items-center justify-center hover:bg-gray-200"
           >
-            <FaArrowLeft size={24} />
+            <FaArrowLeft size={20} />
           </button>
           <button
             onClick={handleRightClick}
-            className="w-[8vw] h-[8vw] md:w-[70px] md:h-[70px] border border-[#5D50C6] bg-[#5D50C6] text-white rounded-full flex items-center justify-center hover:bg-[#4b3db3]"
+            className="w-[8vw] h-[8vw] md:w-[50px] md:h-[50px] border border-[#5D50C6] bg-[#5D50C6] text-white rounded-full flex items-center justify-center hover:bg-[#4b3db3]"
           >
-            <FaArrowRight size={24} />
+            <FaArrowRight size={20} />
           </button>
         </div>
       </div>
