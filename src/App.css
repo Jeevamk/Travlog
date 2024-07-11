@@ -1,15 +1,5 @@
-.nav-link {
-  @apply block py-2 pr-4 pl-3 duration-200 border-b border-gray-100 lg:hover:bg-transparent lg:border-0 lg:p-0;
-}
-
-.nav-link-active {
-  @apply text-black;
-}
-
-.nav-link-inactive {
-  @apply text-gray-600;
-}
-
-.nav-link-hover:hover {
-  @apply text-black;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }

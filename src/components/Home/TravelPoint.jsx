@@ -10,7 +10,7 @@ const TravelPoint = () => {
             <img src="./travelpoint.svg" alt="Feature" className="w-full h-auto rounded-lg max-w-full" />
           </div>
           
-          <div className="w-full md:w-1/2 md:order-2 px-6 md:px-12"> 
+          <div className="w-full md:w-1/2 md:order-2 px-6 md:px-16"> 
             <div className="m-4 md:m-0">
               <h4 className="uppercase text-pink-600 text-lg font-bold">Travel Point</h4>
               <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-800 mt-4">We help you find<br /> your dream location</h1>
