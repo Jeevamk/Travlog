@@ -1,4 +1,3 @@
-
 import React from "react";
 import "../../styles/footer.css";
 import { FaFacebook } from 'react-icons/fa'; 
@@ -102,5 +101,7 @@ export default function Footer() {
     </footer>
   );
 }
+
+
 
 
