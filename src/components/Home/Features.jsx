@@ -3,10 +3,10 @@ import { FaMapMarkerAlt, FaCalendarAlt, FaTicketAlt } from 'react-icons/fa';
 
 const Features = () => {
   return (
-    <section className="bg-white py-12">
+    <section className="bg-white ">
       <div className="container mx-auto px-4 md:px-8 lg:px-12">
         <div className="flex flex-col md:flex-row items-center justify-between">
-          <div className="w-full md:w-1/2 "> 
+          <div className="w-full md:w-1/2"> 
             <h4 className="uppercase text-pink-700 text-lg font-semibold">Key Features</h4>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mt-4">We Offer Best Services</h1>
             <p className="text-gray-500 mt-4 text-lg">
